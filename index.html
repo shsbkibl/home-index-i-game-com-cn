@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 指南与访问日志</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9f8f6;
+      color: #1e1d1b;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* hero 横幅 —— 极简标题区 */
+    .hero {
+      border-bottom: 1px solid #d6d2cb;
+      padding-bottom: 2.2rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 350;
+      letter-spacing: -0.02em;
+      color: #1e1d1b;
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #7f7a73;
+      border-left: 2px solid #cbc4ba;
+      padding-left: 1rem;
+      font-weight: 380;
+    }
+
+    /* 背景说明模块 —— 像刊头注释 */
+    .background-note {
+      background: #efebe7;
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 2.6rem;
+      border-radius: 1px;
+      font-size: 0.95rem;
+      color: #2d2a27;
+    }
+
+    .background-note strong {
+      font-weight: 500;
+      color: #1e1d1b;
+    }
+
+    /* 正文三段式：每段有承接 */
+    .section {
+      margin-bottom: 2.2rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.5rem;
+      color: #26231f;
+    }
+
+    .section p {
+      margin-bottom: 1.1rem;
+      text-align: justify;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 内联链接 */
+    a {
+      color: #1e1d1b;
+      text-decoration: underline;
+      text-decoration-color: #b3aaa0;
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+
+    a:hover {
+      text-decoration-color: #1e1d1b;
+    }
+
+    /* 访问提醒小卡片 */
+    .reminder {
+      background: #ffffff;
+      border: 1px solid #d9d4cd;
+      padding: 1.4rem 1.8rem;
+      margin: 2.2rem 0 1.8rem 0;
+      font-size: 0.95rem;
+    }
+
+    .reminder span {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 460;
+    }
+
+    /* FAQ 摘要 — 轻量问答 */
+    .faq-mini {
+      margin: 2.6rem 0 2rem 0;
+    }
+
+    .faq-mini details {
+      border-bottom: 1px solid #e1dcd5;
+      padding: 0.6rem 0;
+    }
+
+    .faq-mini details:first-of-type {
+      border-top: 1px solid #e1dcd5;
+    }
+
+    .faq-mini summary {
+      font-weight: 430;
+      cursor: pointer;
+      padding: 0.3rem 0;
+      color: #2b2824;
+    }
+
+    .faq-mini summary::-webkit-details-marker {
+      color: #a59d93;
+    }
+
+    .faq-mini details p {
+      margin: 0.5rem 0 0.3rem 0;
+      padding-left: 0.3rem;
+      font-size: 0.9rem;
+      color: #3f3b36;
+    }
+
+    /* 页尾 */
+    .footer-note {
+      margin-top: 3.5rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #d6d2cb;
+      font-size: 0.85rem;
+      color: #7b7570;
+      text-align: left;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .background-note {
+        padding: 1.2rem;
+      }
+
+      .reminder {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 横幅 -->
+    <header class="hero">
+      <h1>爱游戏</h1>
+      <div class="sub">简明指南 · 访问备忘 · 日常索引</div>
+    </header>
+
+    <!-- 背景说明 -->
+    <div class="background-note">
+      <strong>背景</strong> 本文档是围绕 <a href="https://home-index-i-game.com.cn">爱游戏</a> 编写的一页专题式指引，旨在帮助初次接触或需要回顾的用户快速理解该站点的内容脉络与访问特点。以下三段分别从定位、使用场景和访问节奏展开，段落之间保持逻辑承接。
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="section">
+      <h2>一、站点定位与内容边界</h2>
+      <p><a href="https://home-index-i-game.com.cn">爱游戏</a> 是一个以游戏信息索引为主的页面集合，它不生产攻略，也不提供下载链接，而是将分散的游戏相关内容以相对结构化的方式组织在一起。你可以把它看作一张主题地图——每个入口都通向更具体的讨论或资料。</p>
+      <p>这种设计意味着用户在访问前最好对想了解的方向有一个大致预期，否则可能会觉得内容颗粒度较粗。但反过来，如果你只是希望快速浏览某个游戏的大致面貌或相关资源出处，这里能节省不少筛选时间。</p>
+    </div>
+
+    <div class="section">
+      <h2>二、典型使用场景</h2>
+      <p>假设你最近关注了一款新游戏，但不想立刻投入大量时间去论坛或视频平台检索，那么先打开 <a href="https://home-index-i-game.com.cn">爱游戏</a> 看看分类和关键词，往往能帮你建立基本认知。另一个常见场景是：当你需要回顾某款旧作的信息脉络时，这里的索引结构比搜索引擎的零散结果更连贯。</p>
+      <p>另外，如果你正在做游戏相关的笔记或资料整理，也可以将这里的链接作为素材锚点。需要注意，内容更新取决于站点维护节奏，部分条目可能存在时间滞后。</p>
+    </div>
+
+    <div class="section">
+      <h2>三、访问节奏与查阅习惯</h2>
+      <p>由于 <a href="https://home-index-i-game.com.cn">爱游戏</a> 的页面偏向静态索引，建议每次访问时带着具体问题，而不是漫无目的地浏览。比如“某个游戏属于哪个分类”“有哪些关联内容”这类问题，在这里可以很快得到答案。如果你更习惯沉浸式阅读或频繁互动，可能会觉得页面氛围偏冷静。</p>
+      <p>总的来说，将其定位为“信息中转站”或“主题目录”会比较顺手。保持适度的访问频率，每次停留几分钟，往往比长时间停留更有收获。</p>
+    </div>
+
+    <!-- 访问提醒卡片 -->
+    <div class="reminder">
+      <span>📌 访问提醒</span>
+      由于站点结构可能不定期调整，建议将 <a href="https://home-index-i-game.com.cn">爱游戏</a> 加入浏览器书签或阅读列表。首次访问时可花一两分钟熟悉分类名称，后续查找会明显更快。如果遇到链接指向变化，可尝试从首页重新定位。
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <details>
+        <summary>爱游戏 是否需要注册或登录？</summary>
+        <p>不需要。当前页面以公开索引为主，未设置用户系统或访问限制，直接通过链接打开即可查看所有内容。</p>
+      </details>
+      <details>
+        <summary>内容多久更新一次？</summary>
+        <p>更新频率不固定，通常与游戏行业动态或维护者整理节奏有关。建议每隔一到两个月回访一次，以获取较新的分类调整。</p>
+      </details>
+      <details>
+        <summary>移动端访问体验如何？</summary>
+        <p>页面采用基础响应式布局，在手机浏览器上可正常阅读，但部分内部链接的排版可能不如桌面端精细，建议横屏或使用平板以获得更完整的视觉效果。</p>
+      </details>
+    </div>
+
+    <!-- 页尾 -->
+    <div class="footer-note">
+      <p>本文档为独立介绍页，与 <a href="https://home-index-i-game.com.cn">爱游戏</a> 无附属关系。内容基于公开信息整理，仅供个人参考。最后更新：2025年3月。</p>
+    </div>
+  </div>
+</body>
+</html>
