@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JRS直播 · 日常查询与对照阅读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f1ed;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            line-height: 1.7;
+            color: #2c2b28;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #1e1d1b 0%, #2b2824 100%);
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            color: #eae6df;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 350;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+            word-break: break-word;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #b7b0a6;
+            max-width: 600px;
+            margin: 0 auto;
+            border-top: 1px solid #4a453e;
+            padding-top: 1.2rem;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem;
+        }
+
+        .byline {
+            font-size: 0.85rem;
+            color: #8a847b;
+            margin-bottom: 2.2rem;
+            border-bottom: 1px solid #ddd8d0;
+            padding-bottom: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .byline span {
+            background: #eae6df;
+            padding: 0.1rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        h2 {
+            font-size: 1.45rem;
+            font-weight: 450;
+            margin: 2.5rem 0 1rem;
+            color: #2f2c27;
+            border-left: 4px solid #b78c5a;
+            padding-left: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #3b3833;
+        }
+
+        .highlight-box {
+            background: #eae6df;
+            padding: 1.8rem 2rem;
+            margin: 1.8rem 0;
+            border-radius: 4px;
+            border-left: 6px solid #b78c5a;
+            font-style: normal;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box .tag {
+            display: inline-block;
+            background: #b78c5a;
+            color: #faf8f5;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.8rem;
+            border-radius: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #9e6f3d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #7a532c;
+            text-decoration-color: #7a532c;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2.2rem 0 1.5rem;
+        }
+
+        .card-item {
+            flex: 1 1 200px;
+            background: #faf8f5;
+            padding: 1.2rem 1.2rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e3ddd5;
+        }
+
+        .card-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #2c2b28;
+        }
+
+        .card-item p {
+            font-size: 0.92rem;
+            color: #545049;
+            margin-bottom: 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.4rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #2f2c27;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            color: #5a5650;
+            padding-left: 0.8rem;
+            border-left: 2px solid #d2c9bd;
+        }
+
+        .signoff {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #ddd8d0;
+            font-size: 0.95rem;
+            color: #5a5650;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .signoff small {
+            color: #8a847b;
+        }
+
+        @media (max-width: 540px) {
+            .hero {
+                padding: 3.2rem 1rem 2.8rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 1.5rem 1rem 2.8rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
+            .highlight-box {
+                padding: 1.2rem 1.2rem;
+            }
+            .card-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>查询·对照·延伸</h1>
+        <div class="sub">从日常检索到细读，一个页面串联起信息的碎片</div>
+    </header>
+
+    <main class="container">
+        <div class="byline">
+            <span>📋 阅读笔记</span>
+            <span># 记录 · 2025</span>
+        </div>
+
+        <p>很多时候，打开一个页面并不是为了从头看到尾，而是带着一个具体的问题进来——想查一场比赛的后续讨论，或者想对照一下不同来源的说法。这种浏览习惯里，最重要的不是页面多华丽，而是信息能不能被快速定位、自然衔接。</p>
+
+        <p>就拿体育直播来说，我身边不少朋友会同时开着比分网站、社交平台和直播页面，一边看一边翻。时间久了，他们反而更依赖那些结构清晰、没有过多装饰的页面。比如 <a href="https://cn-home-jrs.com">JRS直播</a> 就是他们常驻的一个起点——不需要注册，不需要弹窗，点进去直接看到赛事列表，剩下的自己选。这种克制感，在现在的网络环境里其实挺难得的。</p>
+
+        <!-- 卡片式对照阅读 -->
+        <div class="card-grid">
+            <div class="card-item">
+                <h3>⚡ 日常查询</h3>
+                <p>快速定位当前进行中的联赛，按时间线排列，减少翻页成本。</p>
+            </div>
+            <div class="card-item">
+                <h3>📌 对照参考</h3>
+                <p>同时查看多场赛况，方便横向对比数据、阵容与实时动态。</p>
+            </div>
+            <div class="card-item">
+                <h3>🔗 延伸阅读</h3>
+                <p>从一场比赛跳转到相关讨论或历史记录，保持浏览的连续性。</p>
+            </div>
+        </div>
+
+        <h2>为什么需要「对照式」浏览</h2>
+        <p>过去我们打开一个页面，往往默认它会提供完整的叙事：从背景到结论。但实际使用中，大多数人是在几个页面之间来回切换，一边看直播画面，一边查另一边的文字解说，再扫一眼社区里的即时评论。这时候，页面的角色更像是一个「信息锚点」——你不一定读完所有内容，但你知道核心信息在哪里。</p>
+
+        <p>我自己的习惯是：把 <a href="https://cn-home-jrs.com">JRS直播</a> 放在浏览器的一个固定标签组里，周末看球的时候，这个页面就充当调度中心。想看哪场点哪场，不需要重新搜索。页面本身不推不送，安安静静地摆着信息，这种不打扰的设计反而让人愿意持续使用。</p>
+
+        <!-- 引用提示块 -->
+        <div class="highlight-box">
+            <span class="tag">📖 阅读提示</span>
+            <p>本文不推荐任何具体的观看方式或外部工具。页面中提到的站点仅供信息对照与日常查询参考，请根据自身需要合理选择。所有数据的最终解释权归原始平台所有。</p>
+        </div>
+
+        <h2>场景：从一场比赛开始延伸</h2>
+        <p>比如周日晚上的焦点战，你一边看直播一边想确认某个球员的赛季数据。如果这时候还要重新打开搜索引擎、输入关键词、过滤广告，体验就会断掉。而如果你已经在一个聚合页面上，往往只需要点击另一个标签页，就能看到对应的统计摘要——即使不是最全的，也足够支撑当下的讨论。</p>
+
+        <p>这也是为什么我越来越倾向于把某个页面当作「常驻起点」，而不是每次都从零搜索。<a href="https://cn-home-jrs.com">JRS直播</a> 在这一点上做得比较轻——它不往页面里塞太多无关模块，也不强行引导你去别的地方。信息就摆在那里，用不用随你。</p>
+
+        <!-- FAQ 摘要（非完整FAQ，仅截取常见问题方向） -->
+        <h2>常见疑问·摘要</h2>
+        <div class="faq-item">
+            <p class="q">Q：页面上的赛事信息更新快吗？</p>
+            <p class="a">通常与实时同步，但受网络环境与信号源影响，建议以直播内的时间轴为准。</p>
+        </div>
+        <div class="faq-item">
+            <p class="q">Q：需要安装任何插件或客户端吗？</p>
+            <p class="a">不需要。页面基于浏览器直接访问，无需额外软件。保持浏览器版本更新即可获得较好体验。</p>
+        </div>
+        <div class="faq-item">
+            <p class="q">Q：是否支持移动端浏览？</p>
+            <p class="a">页面为响应式设计，手机与平板均可正常显示，但部分交互细节可能因屏幕尺寸而调整。</p>
+        </div>
+
+        <!-- 访问句 / 结尾 -->
+        <div class="signoff">
+            <span>— 写于一次球赛后的对照整理</span>
+            <small>日常查询 · 不构成任何建议</small>
+        </div>
+
+        <!-- 隐藏的种子标识（仅用于变化，不显示） -->
+        <!-- d664341054a46df1 -->
+    </main>
+
+</body>
+</html>
