@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料索引 · 炸金花</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f2f5;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.65;
+            color: #1e1e2a;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 920px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        /* hero 卡片 */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 3.2rem 2.8rem 2.8rem 2.8rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e8ebee;
+            transition: box-shadow 0.2s;
+        }
+
+        .hero:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 480;
+            letter-spacing: -0.02em;
+            color: #1f2a3a;
+            margin-bottom: 0.5rem;
+            line-height: 1.25;
+        }
+
+        .hero h1 span {
+            font-weight: 600;
+            background: linear-gradient(145deg, #3d4c5e 0%, #1f2a3a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .opening {
+            font-size: 1.05rem;
+            color: #3f4a5a;
+            max-width: 72%;
+            margin-top: 0.6rem;
+            border-left: 3px solid #c8d0d9;
+            padding-left: 1.2rem;
+            background: #f7f9fc;
+            border-radius: 0 8px 8px 0;
+            padding: 0.8rem 1.2rem;
+        }
+
+        /* 通用卡片 */
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2.4rem;
+            border: 1px solid #e2e6ec;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+            transform: translateY(-1px);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 450;
+            letter-spacing: -0.01em;
+            color: #1f2a3a;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eef1f5;
+        }
+
+        .card p {
+            margin-bottom: 1.2rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .feature-item {
+            background: #f6f8fb;
+            border-radius: 18px;
+            padding: 1rem 1.2rem;
+            border: 1px solid #e6eaf0;
+            transition: background 0.15s;
+        }
+
+        .feature-item:hover {
+            background: #eef2f7;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 540;
+            color: #1a273b;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+
+        .feature-item .desc {
+            font-size: 0.92rem;
+            color: #46546a;
+        }
+
+        .scene-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 0.6rem 0 0.2rem;
+        }
+
+        .scene-tag {
+            background: #edf0f5;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #2a384e;
+            border: 1px solid #dadfe7;
+            letter-spacing: 0.01em;
+        }
+
+        .faq-mini {
+            margin-top: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .faq-q {
+            background: #f6f8fb;
+            border-radius: 16px;
+            padding: 0.7rem 1.2rem;
+            border-left: 4px solid #b7c2d0;
+        }
+
+        .faq-q strong {
+            display: block;
+            font-weight: 500;
+            color: #1a273b;
+        }
+
+        .faq-q p {
+            margin: 0.3rem 0 0 0;
+            font-size: 0.92rem;
+            color: #3c4b60;
+        }
+
+        .note {
+            background: #fafcff;
+            border-radius: 20px;
+            padding: 1.2rem 1.6rem;
+            border: 1px solid #dfe4ec;
+            font-size: 0.96rem;
+            color: #2a3b52;
+            margin-top: 0.6rem;
+        }
+
+        .note a {
+            color: #1f3a5f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b7c9de;
+            font-weight: 500;
+        }
+
+        .note a:hover {
+            color: #0b1c33;
+            text-decoration-color: #1f3a5f;
+        }
+
+        .ending {
+            text-align: left;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2rem 2.8rem;
+            border: 1px solid #e2e6ec;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .ending p {
+            color: #2c3b51;
+            font-size: 1rem;
+            max-width: 80%;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+
+            .hero {
+                padding: 2rem 1.4rem 1.6rem 1.4rem;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero .opening {
+                max-width: 100%;
+                font-size: 0.95rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .card h2 {
+                font-size: 1.35rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+
+            .ending p {
+                max-width: 100%;
+            }
+
+            .ending {
+                padding: 1.5rem 1.4rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .scene-wrap {
+                gap: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场卡片 hero -->
+    <div class="hero">
+        <h1>从一手牌到一类资料：<br><span>炸金花</span> 的信息整理笔记</h1>
+        <div class="opening">
+            牌面翻开的瞬间，经验、概率与心理同时落位。本文从资料整理与规则索引的角度，梳理 <a href="https://apps-goldenflower.com" style="text-decoration: underline; text-underline-offset: 3px; color: #1f3a5f; font-weight: 500;">炸金花</a> 的核心脉络，不做主观评价，只呈现可查可用的知识索引。
+        </div>
+    </div>
+
+    <!-- 承接段落：从牌型到记录习惯 -->
+    <div class="card">
+        <h2>为什么需要一份资料索引</h2>
+        <p>任何一种流行游戏的背后，都沉淀着大量的规则变体、地区习惯和术语体系。<strong>炸金花</strong> 作为流传甚广的牌类之一，其资料常常零散分布在论坛、短视频与口述中。一份结构化的信息索引，能帮助新接触者更快建立认知框架，也让老玩家对照自己熟知的版本是否存在差异。</p>
+        <p>这个页面并非玩法教程，而是围绕牌型分类、叫牌逻辑、常见变体、牌桌用语等维度，整理出一个可供查阅的纲要。每一条内容都对应可追溯的原始资料（线上或线下），以保持信息的可验证性。</p>
+    </div>
+
+    <!-- 特点列表：用卡片内的网格 -->
+    <div class="card">
+        <h2>信息要点整理</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>牌型层级</strong>
+                <span class="desc">豹子 > 同花顺 > 同花 > 顺子 > 对子 > 散牌；部分变体加入特殊组合（如 235 可压豹子）。</span>
+            </div>
+            <div class="feature-item">
+                <strong>叫注节奏</strong>
+                <span class="desc">循环“看牌/跟注/加注/弃牌”，可封顶（通常为底池倍数上限），或采用“闷牌”规则。</span>
+            </div>
+            <div class="feature-item">
+                <strong>地区变体</strong>
+                <span class="desc">四川、贵州、东北等地存在“喜钱”“喜牌”“喜分”制度，以及“轮庄”与“固定庄”的差异。</span>
+            </div>
+            <div class="feature-item">
+                <strong>常用术语</strong>
+                <span class="desc">“闷”“亮”“敲”“喜钱”“跑”“偷鸡”等，不同牌桌定义略有不同，宜事先确认。</span>
+            </div>
+            <div class="feature-item">
+                <strong>概率参考</strong>
+                <span class="desc">豹子约 1/5525，同花顺约 1/4600，同花约 1/509，顺子约 1/255（基于 52 张标准牌）。</span>
+            </div>
+            <div class="feature-item">
+                <strong>心理层面</strong>
+                <span class="desc">诈唬（偷鸡）与反诈唬是策略核心，但本文不详述策略，仅记录常见心理博弈类型。</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 场景与提示 (类似FAQ摘要) -->
+    <div class="card">
+        <h2>使用场景与常见疑问</h2>
+        <p style="margin-bottom:0.6rem;">以下摘录自玩家社群与资料整理中的高频关注点，可作为索引时的辅助对照：</p>
+
+        <div class="faq-mini">
+            <div class="faq-q">
+                <strong>Q · 炸金花与「赢三张」是同一游戏吗？</strong>
+                <p>基本框架一致，但“赢三张”通常包含特定的喜牌奖励机制，且部分地区将“拖拉机”视为特殊顺子。建议以具体规则文档为准。</p>
+            </div>
+            <div class="faq-q">
+                <strong>Q · 是否存在公认的官方规则？</strong>
+                <p>没有统一国际规则。多数线下牌局采用“默认习惯+赛前约定”的形式。资料索引会标注规则来源的社群或地区，便于交叉验证。</p>
+            </div>
+            <div class="faq-q">
+                <strong>Q · 线上资料与实体玩法差异大吗？</strong>
+                <p>线上版本通常固化某一套规则（如封顶倍数、喜钱数值），而实体玩法更具弹性。查阅时请留意资料标注的“线上/线下”来源。</p>
+            </div>
+        </div>
+
+        <div class="note">
+            💡 提示：建议在查阅任何关于 <a href="https://apps-goldenflower.com">炸金花</a> 的资料时，先确定规则版本、牌桌人数、是否含喜钱，以免混淆不同体系的说法。本索引仅做结构性整理，不替代具体规则文档。
+        </div>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="ending">
+        <p>资料的价值在于对照，而非定论。每一次翻牌都是新的排列，每一份索引都可以被补充。如果你在整理自己的笔记，不妨将这份卡片结构作为起点，逐步填充你观察到的细部差异。保持开放，保持记录。</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #5b6a7f;">—— 信息整理日志 · 版本 2025 · 不构成任何游戏建议</p>
+    </div>
+
+</div>
+</body>
+</html>
